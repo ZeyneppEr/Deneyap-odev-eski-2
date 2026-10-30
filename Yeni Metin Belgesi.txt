@@ -1,0 +1,254 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int randomNumber,adetSayisi=0,toplam=0;
+    for(int i=0;i<10;i++){
+        randomNumber=rand()%100;
+        if(randomNumber%2==1){
+            adetSayisi++;
+            toplam+=randomNumber;
+        }
+    }
+    cout<<"toplam="<<toplam<<endl<<"Tek sayısı="<<adetSayisi<<endl;
+    return 0;
+}
+
+
+
+int i=0,toplam=0,sayi=0;
+    do{
+        cin>>sayi;
+        toplam+=sayi;
+    }while(sayi%2==0);
+        cout<<toplam<<endl
+
+
+
+
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+class kulaklik{                                     //ana sınıf
+    public:
+    int desibel;
+    void muzikcal(){
+        cout<<"ana sınıfta müzik çalıyor \n";
+    }
+    void konusmayap(){
+        cout<<"ana sınıfta konusma yapılıyor";
+    }
+};
+
+class kulakUstuKulaklik:public kulaklik{                    //yavru
+    public:
+    int desibel;
+    void muzikcal(){
+        cout<<"kulakUstuKulaklık sınıftında ana sınıfta müzik çalıyor";
+    }
+    void konusmayap(){
+        cout<<"kulakUstuKulaklık sınıftında  ana sınıfta konusma yapılıyor";
+    }
+};
+
+int main()
+{
+    kulaklik k1;
+    k1.muzikcal();
+    
+    kulakUstuKulaklik k2;
+    k2.muzikcal();
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+class calisan{
+    public:
+    void calisma(){
+        cout<<"calisma \n";
+    }
+    void gorevAtama(){
+        cout<<"Gorev atana \n";
+    }
+};
+
+
+class insan:public calisan{
+    public:
+    void yemekyeme(){
+        cout<<"yemek molası! \n";
+    }
+    void maasalma(){
+        cout<<"calisan maaslari \n";
+    }
+};
+
+
+class robot:public calisan{
+    public:
+    void seriuretim(){
+        cout<<"seri uretim modu aktif! \n";
+    }
+    void bakimsaati(){
+        cout<<"robot bakimi yapiliyor \n";
+    }
+};
+int main()
+{
+    insan calisan1;
+    calisan1.calisma();
+    calisan1.maasalma();
+    
+    robot calisan2;
+    calisan2.gorevAtama();
+    calisan2.bakimsaati();
+    return 0;
+}
+
+
+
+
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+class araba{
+  public:
+  void aracekle(){
+      cout<<"ananonim araç eklendi \n";
+  }
+  void aracekle(char aractipi[]){
+      cout<<aractipi<<" aracı eklendi \n";
+  }
+  void aracekle(char aractipi[],int km){
+      cout<<aractipi<<" adındaki arac eklendi. (not: arac km:"<<km<<") \n";
+  }
+};
+int main()
+{
+    araba araba1;
+    araba1.aracekle("bmw",100034);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+
+class Temel
+{
+public:
+    void yaz() {
+        cout << "Temel Fonksiyon" << endl;
+    }
+};
+
+
+class Turetilmis : public Temel
+{
+public:
+    void yaz() {
+        cout << "Turetilmis Fonksiyon" << endl;
+    }
+};
+
+
+
+
+int main()
+{
+    Turetilmis turet1, turet2;
+    turet1.yaz();
+    turet2.Temel::yaz();
+    return 0;
+},
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+class Araba
+{
+public:
+    char marka[30];
+    char model[30];
+    float fiyat;
+    int hiz;
+
+    void hizlanma();
+    void yavaslama();
+};
+
+void Araba::hizlanma()
+{
+    hiz = hiz + 10;
+    cout << "Araba hizlaniyor." << endl;
+}
+void Araba::yavaslama()
+{
+    hiz = hiz - 10;
+    cout << "Araba yavasliyor." << endl;
+}
+
+
+int main()
+{
+    Araba car1;
+    car1.fiyat=123;
+    cout<<car1.fiyat<<endl;
+    car1.hizlanma();
+    return 0;
+}
